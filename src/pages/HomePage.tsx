@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Button from '../components/ui/Button'
 import PropertyCard from '../components/ui/PropertyCard'
+import WhatsAppButton from '../components/ui/WhatsAppButton'
 
 const HomePage = () => {
   const navigate = useNavigate()
@@ -513,6 +514,9 @@ const HomePage = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* WhatsApp Button - Floating */}
+      <WhatsAppButton />
     </div>
   )
 }
