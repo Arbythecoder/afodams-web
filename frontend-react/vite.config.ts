@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react()],
   // Use '/' for custom domain or Cloudflare Pages (client's domain)
   // Use '/afodams-web/' only for GitHub Pages subdirectory
-  base: '/',
+  base: '/afodams-web/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
