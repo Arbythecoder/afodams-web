@@ -11,32 +11,32 @@ const AboutPage = () => {
   const navigate = useNavigate()
 
   const stats = [
-    { value: '10+', label: 'Years Experience', icon: <Clock className="w-6 h-6" /> },
-    { value: '500+', label: 'Properties Sold', icon: <Home className="w-6 h-6" /> },
-    { value: '1,200+', label: 'Happy Clients', icon: <Heart className="w-6 h-6" /> },
-    { value: '50+', label: 'Expert Agents', icon: <Users className="w-6 h-6" /> },
+    { value: '15+', label: 'Years Experience', icon: <Clock className="w-6 h-6" /> },
+    { value: '50+', label: 'Successful Engagements', icon: <Home className="w-6 h-6" /> },
+    { value: '100%', label: 'Confidentiality Maintained', icon: <Heart className="w-6 h-6" /> },
+    { value: '3', label: 'Key Industries', icon: <Users className="w-6 h-6" /> },
   ]
 
   const values = [
     {
       icon: <Shield className="w-8 h-8" />,
-      title: 'Trust & Transparency',
-      description: 'We believe in honest dealings and transparent transactions. Every property is verified and every document is authenticated.'
+      title: 'Absolute Confidentiality',
+      description: 'Every engagement is handled with the strictest confidentiality protocols. Client information and project details are protected with the highest security standards.'
     },
     {
       icon: <Award className="w-8 h-8" />,
-      title: 'Excellence',
-      description: 'We strive for excellence in everything we do, from customer service to property presentation and legal documentation.'
+      title: 'Professional Excellence',
+      description: 'We maintain the highest professional standards in all documentation and advisory services, ensuring accuracy, compliance, and quality delivery.'
     },
     {
       icon: <UserCheck className="w-8 h-8" />,
-      title: 'Client First',
-      description: 'Your satisfaction is our priority. We go above and beyond to ensure you find the perfect property.'
+      title: 'Client-Centric Approach',
+      description: 'Your success is our priority. We tailor our services to your specific needs and maintain transparent communication throughout every engagement.'
     },
     {
       icon: <Target className="w-8 h-8" />,
-      title: 'Results Driven',
-      description: 'We focus on delivering results - helping you buy, sell, or rent properties efficiently and profitably.'
+      title: 'Results Focused',
+      description: 'We deliver comprehensive, compliant documentation and strategic advisory that helps you achieve your institutional and procurement objectives.'
     },
   ]
 
@@ -45,35 +45,35 @@ const AboutPage = () => {
       name: 'Chief Adewale Afodams',
       role: 'Founder & CEO',
       image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400',
-      bio: 'Over 15 years of experience in Nigerian real estate market.'
+      bio: 'Over 15 years of experience in consultancy and institutional partnerships across Nigeria.'
     },
     {
       name: 'Mrs. Ngozi Okonkwo',
-      role: 'Head of Sales',
+      role: 'Head of Advisory Services',
       image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400',
-      bio: 'Expert in luxury property sales across Lagos and Abuja.'
+      bio: 'Expert in government procurement and bid documentation with extensive public sector experience.'
     },
     {
       name: 'Mr. Emeka Johnson',
-      role: 'Legal Director',
+      role: 'Legal & Compliance Director',
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400',
-      bio: 'Ensures all transactions are legally sound and documented.'
+      bio: 'Ensures all documentation meets regulatory requirements and legal standards.'
     },
     {
       name: 'Mrs. Aisha Mohammed',
       role: 'Client Relations Manager',
       image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400',
-      bio: 'Dedicated to providing exceptional customer service.'
+      bio: 'Dedicated to maintaining confidentiality and providing exceptional client service.'
     },
   ]
 
   const milestones = [
-    { year: '2014', event: 'Afodams Property founded in Lagos' },
-    { year: '2016', event: 'Expanded to Abuja and Port Harcourt' },
-    { year: '2018', event: 'Launched digital property platform' },
-    { year: '2020', event: 'Celebrated 500th successful transaction' },
-    { year: '2022', event: 'Introduced C of O verification service' },
-    { year: '2024', event: 'Launched premium investment analytics tools' },
+    { year: '2014', event: 'AFODAMS Property Limited founded in Lagos' },
+    { year: '2018', event: 'Expanded consultancy services to government sector' },
+    { year: '2020', event: 'Launched institutional partnership support division' },
+    { year: '2022', event: 'Achieved 50+ successful government bid documentations' },
+    { year: '2024', event: 'Introduced secure digital document submission platform' },
+    { year: '2026', event: 'Pivot to full-service consultancy platform' },
   ]
 
   return (
@@ -96,12 +96,12 @@ const AboutPage = () => {
           >
             <span className="badge-premium mb-6 inline-block">About Us</span>
             <h1 className="text-5xl md:text-6xl font-playfair font-bold mb-6">
-              Nigeria's Premier{' '}
-              <span className="text-gradient-gold">Property Partner</span>
+              Professional{' '}
+              <span className="text-gradient-gold">Consultancy Services</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              For over a decade, Afodams Property has been helping Nigerians find their dream homes,
-              make smart investments, and build wealth through real estate.
+              AFODAMS Property Limited provides expert consultancy for government bids, 
+              institutional partnerships, and comprehensive documentation with absolute confidentiality.
             </p>
           </motion.div>
         </div>
@@ -146,27 +146,28 @@ const AboutPage = () => {
                 Our Story
               </span>
               <h2 className="text-4xl font-playfair font-bold mt-3 mb-6">
-                Building Dreams Since 2014
+                Trusted Consultancy Since 2014
               </h2>
               <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
                 <p>
-                  Afodams Property Limited was founded with a simple mission: to make property
-                  ownership accessible, transparent, and stress-free for every Nigerian.
+                  AFODAMS Property Limited was founded with a mission: to provide professional, 
+                  confidential consultancy services that help organizations navigate complex 
+                  procurement, documentation, and institutional partnership requirements.
                 </p>
                 <p>
-                  Starting from a small office on Ogudu Road, Lagos, we have grown to become
-                  one of Nigeria's most trusted real estate companies, with presence in Lagos,
-                  Abuja, and Port Harcourt.
+                  Starting from our office on Ogudu Road, Lagos, we have built a reputation 
+                  for absolute confidentiality, meticulous documentation, and strategic advisory 
+                  that delivers results across government, institutional, and private sectors.
                 </p>
                 <p>
-                  Our commitment to transparency, particularly in document verification and
-                  legal compliance, has earned us the trust of thousands of clients - from
-                  first-time homebuyers to seasoned investors.
+                  Our commitment to professional excellence and client confidentiality has earned 
+                  us the trust of government agencies, educational institutions, healthcare 
+                  organizations, and corporate clients across Nigeria.
                 </p>
                 <p>
-                  Today, we continue to innovate with our advanced digital platform, offering
-                  features like C of O verification, investment analytics, and payment plan
-                  calculators that no other Nigerian property platform provides.
+                  Today, we continue to innovate with our secure digital platform for document 
+                  submission, offering encrypted communications and streamlined processes that 
+                  protect client confidentiality while delivering comprehensive support.
                 </p>
               </div>
             </motion.div>
@@ -205,9 +206,9 @@ const AboutPage = () => {
               </div>
               <h3 className="text-3xl font-playfair font-bold mb-4">Our Mission</h3>
               <p className="text-gray-300 text-lg leading-relaxed">
-                To democratize access to quality real estate in Nigeria by providing transparent,
-                verified, and affordable property solutions. We aim to be the bridge between
-                property dreams and reality for every Nigerian, whether at home or in the diaspora.
+                To provide professional consultancy services that empower organizations to successfully 
+                navigate government procurement, institutional partnerships, and complex documentation 
+                requirements with absolute confidentiality and expert guidance.
               </p>
             </motion.div>
             <motion.div
@@ -222,9 +223,9 @@ const AboutPage = () => {
               </div>
               <h3 className="text-3xl font-playfair font-bold mb-4">Our Vision</h3>
               <p className="text-gray-300 text-lg leading-relaxed">
-                To become Africa's most trusted and innovative real estate platform, known for
-                integrity, technology-driven solutions, and exceptional customer service. We
-                envision a Nigeria where property ownership is secure, transparent, and accessible.
+                To be Nigeria's premier consultancy platform for government procurement, institutional 
+                partnerships, and documentation services—known for unwavering confidentiality, 
+                professional excellence, and successful outcomes that help our clients achieve their objectives.
               </p>
             </motion.div>
           </div>

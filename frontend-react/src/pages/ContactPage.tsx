@@ -98,20 +98,20 @@ const ContactPage = () => {
 
   const faqs = [
     {
-      question: 'How do I verify a property\'s C of O?',
-      answer: 'Our platform provides a C of O verification tool. Simply enter the property details and we\'ll verify with the relevant land registry.'
+      question: 'How confidential is my information?',
+      answer: 'All client information is protected under strict confidentiality agreements. We use encrypted communications and secure storage with access limited to authorized personnel only.'
     },
     {
-      question: 'What payment plans are available?',
-      answer: 'We offer flexible payment plans including outright purchase, installment payments (6-24 months), and mortgage assistance through partner banks.'
+      question: 'What documents do I need for a consultation?',
+      answer: 'For an initial consultation, just bring your project overview and any relevant background information. We\'ll advise on specific documentation requirements during the consultation.'
     },
     {
-      question: 'How long does the buying process take?',
-      answer: 'Typically 2-4 weeks for outright purchases with verified documents. Mortgage-backed purchases may take 4-8 weeks depending on bank processing.'
+      question: 'How long does the consultancy process take?',
+      answer: 'Project timelines vary by complexity. Typical government bid support takes 2-3 weeks, while comprehensive documentation projects may take 3-6 weeks. We provide clear timelines during the initial consultation.'
     },
     {
-      question: 'Do you help with property management?',
-      answer: 'Yes! We offer comprehensive property management services for landlords, including tenant screening, rent collection, and maintenance coordination.'
+      question: 'Do you work with government agencies directly?',
+      answer: 'We provide consultancy and documentation support for organizations engaging with government agencies. We assist in preparing compliant bid packages and institutional partnership proposals.'
     },
   ]
 

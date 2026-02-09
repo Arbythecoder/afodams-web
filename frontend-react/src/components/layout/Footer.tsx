@@ -21,29 +21,30 @@ const Footer = () => {
 
   const quickLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Properties', path: '/properties' },
+    { name: 'Services', path: '/services' },
+    { name: 'Industries', path: '/industries' },
+    { name: 'Process', path: '/process' },
+    { name: 'Case Studies', path: '/case-studies' },
     { name: 'About Us', path: '/about' },
     { name: 'Contact', path: '/contact' },
-    { name: 'Login', path: '/login' },
-    { name: 'Register', path: '/signup' },
+    { name: 'Privacy Policy', path: '/privacy' },
   ]
 
-  const propertyLinks = [
-    { name: 'Properties for Sale', path: '/properties?type=sale' },
-    { name: 'Properties for Rent', path: '/properties?type=rent' },
-    { name: 'Luxury Homes', path: '/properties?category=luxury' },
-    { name: 'Commercial Properties', path: '/properties?category=commercial' },
-    { name: 'Land for Sale', path: '/properties?category=land' },
-    { name: 'New Developments', path: '/properties?category=new' },
+  const servicesLinks = [
+    { name: 'Consultation & Advisory', path: '/services#consultation' },
+    { name: 'Government Bids & Tenders', path: '/services#bids' },
+    { name: 'Documentation Services', path: '/services#documentation' },
+    { name: 'Institutional Partnerships', path: '/services#partnerships' },
+    { name: 'Book Consultation', path: '/book-consultation' },
+    { name: 'Secure Document Upload', path: '/secure-docs' },
   ]
 
-  const toolsLinks = [
-    { name: 'Mortgage Calculator', path: '/tools/mortgage' },
-    { name: 'ROI Calculator', path: '/tools/roi' },
-    { name: 'C of O Verification', path: '/tools/cofo' },
-    { name: 'Payment Plans', path: '/tools/payment-plan' },
-    { name: 'Currency Converter', path: '/tools/currency' },
-    { name: 'Investment Guide', path: '/tools/diaspora' },
+  const industryLinks = [
+    { name: 'Government Agencies', path: '/industries#government' },
+    { name: 'Educational Institutions', path: '/industries#institutions' },
+    { name: 'Healthcare Organizations', path: '/industries#institutions' },
+    { name: 'Private Corporations', path: '/industries#private' },
+    { name: 'Individual Professionals', path: '/industries#private' },
   ]
 
   const legalLinks = [
@@ -69,10 +70,10 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
               <h3 className="text-2xl font-playfair font-bold text-premium-black mb-2">
-                Subscribe to Our Newsletter
+                Stay Informed
               </h3>
               <p className="text-premium-charcoal">
-                Get the latest property listings and market updates delivered to your inbox.
+                Receive updates on consultancy services, industry insights, and regulatory changes.
               </p>
             </div>
             <form onSubmit={handleSubscribe} className="flex gap-2 w-full md:w-auto">
@@ -112,9 +113,9 @@ const Footer = () => {
               Afodams Property
             </h3>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Nigeria's premier real estate platform. We help you find your dream home,
-              make smart investments, and navigate the property market with confidence.
-              Trusted by thousands of Nigerians since 2014.
+              Professional consultancy services for government contracts, institutional partnerships, 
+              and comprehensive documentation with absolute confidentiality. Supporting agencies, 
+              institutions, and private clients across Nigeria.
             </p>
 
             {/* Contact Info */}
@@ -180,11 +181,11 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Properties */}
+          {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold text-luxury-gold mb-6">Properties</h4>
+            <h4 className="text-lg font-semibold text-luxury-gold mb-6">Our Services</h4>
             <ul className="space-y-3">
-              {propertyLinks.map((link, index) => (
+              {servicesLinks.map((link, index) => (
                 <li key={index}>
                   <Link
                     to={link.path}
@@ -198,11 +199,29 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Tools */}
+          {/* Industries */}
           <div>
-            <h4 className="text-lg font-semibold text-luxury-gold mb-6">Tools & Resources</h4>
+            <h4 className="text-lg font-semibold text-luxury-gold mb-6">Industries</h4>
             <ul className="space-y-3">
-              {toolsLinks.map((link, index) => (
+              {industryLinks.map((link, index) => (
+                <li key={index}>
+                  <Link
+                    to={link.path}
+                    className="text-gray-400 hover:text-luxury-gold transition-colors flex items-center gap-2 group"
+                  >
+                    <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal & Support */}
+          <div>
+            <h4 className="text-lg font-semibold text-luxury-gold mb-6">Legal & Support</h4>
+            <ul className="space-y-3">
+              {legalLinks.map((link, index) => (
                 <li key={index}>
                   <Link
                     to={link.path}

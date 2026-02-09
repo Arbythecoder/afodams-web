@@ -20,7 +20,10 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Properties', path: '/properties' },
+    { name: 'Services', path: '/services' },
+    { name: 'Industries', path: '/industries' },
+    { name: 'Process', path: '/process' },
+    { name: 'Case Studies', path: '/case-studies' },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
   ]
@@ -48,7 +51,7 @@ const Navbar = () => {
               <h1 className="text-xl font-playfair font-bold text-gradient-gold">
                 Afodams Property
               </h1>
-              <p className="text-xs text-gray-600">Luxury Real Estate</p>
+              <p className="text-xs text-gray-600">Advisory & Documentation</p>
             </div>
           </Link>
 
@@ -85,10 +88,10 @@ const Navbar = () => {
                 Sign In
               </Button>
             </Link>
-            <Link to="/dashboard">
+            <Link to="/book-consultation">
               <Button variant="gold" size="sm">
                 <Plus className="w-4 h-4" />
-                List Property
+                Book Consultation
               </Button>
             </Link>
           </div>
@@ -134,10 +137,10 @@ const Navbar = () => {
                     Sign In
                   </Button>
                 </Link>
-                <Link to="/dashboard" onClick={() => setIsOpen(false)}>
+                <Link to="/book-consultation" onClick={() => setIsOpen(false)}>
                   <Button variant="gold" size="sm" className="w-full">
                     <Plus className="w-4 h-4" />
-                    List Property
+                    Book Consultation
                   </Button>
                 </Link>
               </div>

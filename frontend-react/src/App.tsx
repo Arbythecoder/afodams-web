@@ -6,26 +6,35 @@ import { AuthProvider } from './context/AuthContext'
 
 // Pages
 import HomePage from './pages/HomePage'
-import PropertyListPage from './pages/PropertyListPage'
-import PropertyDetailsPage from './pages/PropertyDetailsPage'
+// import PropertyListPage from './pages/PropertyListPage' // DISABLED: Property platform features
+// import PropertyDetailsPage from './pages/PropertyDetailsPage' // DISABLED: Property platform features
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
 import LoginPage from './pages/LoginPage'
 
+// Consultancy Pages
+import ServicesPage from './pages/ServicesPage'
+import IndustriesPage from './pages/IndustriesPage'
+import ProcessPage from './pages/ProcessPage'
+import CaseStudiesPage from './pages/CaseStudiesPage'
+import BookConsultationPage from './pages/BookConsultationPage'
+import SecureDocsPage from './pages/SecureDocsPage'
+import PrivacyPage from './pages/PrivacyPage'
+
 // Auth Pages
 import RoleSelector from './pages/auth/RoleSelector'
-import LandlordSignup from './pages/auth/LandlordSignup'
-import TenantSignup from './pages/auth/TenantSignup'
-import InvestorSignup from './pages/auth/InvestorSignup'
-import AgentSignup from './pages/auth/AgentSignup'
+// import LandlordSignup from './pages/auth/LandlordSignup' // DISABLED: Property platform features
+// import TenantSignup from './pages/auth/TenantSignup' // DISABLED: Property platform features
+// import InvestorSignup from './pages/auth/InvestorSignup' // DISABLED: Property platform features
+// import AgentSignup from './pages/auth/AgentSignup' // DISABLED: Property platform features
 
 // Dashboard Pages
 import DashboardPage from './pages/DashboardPage'
 import AdminDashboard from './pages/dashboards/AdminDashboard'
-import LandlordDashboard from './pages/dashboards/LandlordDashboard'
-import TenantDashboard from './pages/dashboards/TenantDashboard'
-import InvestorDashboard from './pages/dashboards/InvestorDashboard'
-import AgentDashboard from './pages/dashboards/AgentDashboard'
+// import LandlordDashboard from './pages/dashboards/LandlordDashboard' // DISABLED: Property platform features
+// import TenantDashboard from './pages/dashboards/TenantDashboard' // DISABLED: Property platform features
+// import InvestorDashboard from './pages/dashboards/InvestorDashboard' // DISABLED: Property platform features
+// import AgentDashboard from './pages/dashboards/AgentDashboard' // DISABLED: Property platform features
 
 // Layout
 import Navbar from './components/layout/Navbar'
@@ -45,18 +54,37 @@ function App() {
             <Routes>
               {/* Public Routes */}
               <Route path="/" element={<HomePage />} />
-              <Route path="/properties" element={<PropertyListPage />} />
-              <Route path="/properties/:id" element={<PropertyDetailsPage />} />
+              <Route path="/services" element={<ServicesPage />} />
+              <Route path="/industries" element={<IndustriesPage />} />
+              <Route path="/process" element={<ProcessPage />} />
+              <Route path="/case-studies" element={<CaseStudiesPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/book-consultation" element={<BookConsultationPage />} />
+              <Route path="/privacy" element={<PrivacyPage />} />
               <Route path="/login" element={<LoginPage />} />
+
+              {/* DISABLED: Property platform routes */}
+              {/* <Route path="/properties" element={<PropertyListPage />} /> */}
+              {/* <Route path="/properties/:id" element={<PropertyDetailsPage />} /> */}
 
               {/* Signup Routes */}
               <Route path="/signup" element={<RoleSelector />} />
-              <Route path="/signup/landlord" element={<LandlordSignup />} />
-              <Route path="/signup/tenant" element={<TenantSignup />} />
-              <Route path="/signup/investor" element={<InvestorSignup />} />
-              <Route path="/signup/agent" element={<AgentSignup />} />
+              {/* DISABLED: Role-specific signups */}
+              {/* <Route path="/signup/landlord" element={<LandlordSignup />} /> */}
+              {/* <Route path="/signup/tenant" element={<TenantSignup />} /> */}
+              {/* <Route path="/signup/investor" element={<InvestorSignup />} /> */}
+              {/* <Route path="/signup/agent" element={<AgentSignup />} /> */}
+
+              {/* Secure Document Upload (Protected) */}
+              <Route
+                path="/secure-docs"
+                element={
+                  <ProtectedRoute>
+                    <SecureDocsPage />
+                  </ProtectedRoute>
+                }
+              />
 
               {/* Protected Routes */}
               <Route
@@ -68,8 +96,8 @@ function App() {
                 }
               />
 
-              {/* Role-Specific Dashboards */}
-              <Route
+              {/* DISABLED: Role-Specific Dashboards (Property Platform) */}
+              {/* <Route
                 path="/landlord/dashboard"
                 element={
                   <ProtectedRoute allowedRoles={['landlord', 'admin']}>
@@ -100,7 +128,7 @@ function App() {
                     <AgentDashboard />
                   </ProtectedRoute>
                 }
-              />
+              /> */}
               <Route
                 path="/admin/dashboard"
                 element={

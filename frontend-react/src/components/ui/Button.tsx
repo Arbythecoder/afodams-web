@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes, ReactNode } from 'react'
 import { motion } from 'framer-motion'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'gold' | 'luxury' | 'outline'
+  variant?: 'gold' | 'luxury' | 'outline' | 'gradient'
   size?: 'sm' | 'md' | 'lg'
   children: ReactNode
   isLoading?: boolean
@@ -22,7 +22,8 @@ const Button = ({
   const variantClasses = {
     gold: 'bg-gradient-gold text-premium-black shadow-gold hover:shadow-gold-lg hover:-translate-y-1 active:translate-y-0',
     luxury: 'bg-premium-black text-luxury-gold border-2 border-luxury-gold hover:bg-luxury-gold hover:text-premium-black hover:-translate-y-1',
-    outline: 'bg-transparent text-luxury-gold border-2 border-luxury-gold hover:bg-luxury-gold hover:text-premium-black'
+    outline: 'bg-transparent text-luxury-gold border-2 border-luxury-gold hover:bg-luxury-gold hover:text-premium-black',
+    gradient: 'bg-gradient-gold text-premium-black shadow-gold hover:shadow-gold-lg hover:-translate-y-1 active:translate-y-0'
   }
 
   const sizeClasses = {
