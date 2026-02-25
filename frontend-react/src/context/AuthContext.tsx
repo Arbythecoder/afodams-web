@@ -61,6 +61,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         investorToken: data.user.investorToken,
       }
 
+      // Store the fully-formed user (with token) so page refresh preserves all fields
+      localStorage.setItem('user', JSON.stringify(userData))
       setUser(userData)
 
       toast.success(`Welcome back, ${userData.name}!`)
@@ -109,10 +111,42 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       setLoading(true)
 
       // Call the real backend API
-      await authAPI.register({ ...userData, role })
+      const data = await authAPI.register({ ...userData, role })
 
-      toast.success('Account created successfully! Please login.')
-      navigate('/login')
+      // Auto-login after successful registration
+      const newUser: User = {
+        id: data.user._id || data.user.id,
+        email: data.user.email,
+        name: data.user.name,
+        role: data.user.role,
+        avatar: data.user.avatar,
+        token: data.token,
+      }
+
+      localStorage.setItem('user', JSON.stringify(newUser))
+      setUser(newUser)
+      toast.success(`Welcome, ${newUser.name}! Account created successfully.`)
+
+      // Redirect to role-specific dashboard
+      switch (newUser.role) {
+        case 'admin':
+          navigate('/admin/dashboard')
+          break
+        case 'landlord':
+          navigate('/landlord/dashboard')
+          break
+        case 'tenant':
+          navigate('/tenant/dashboard')
+          break
+        case 'investor':
+          navigate('/investor/dashboard')
+          break
+        case 'agent':
+          navigate('/agent/dashboard')
+          break
+        default:
+          navigate('/dashboard')
+      }
     } catch (error: any) {
       // Better error handling for network errors
       let errorMessage = 'Signup failed'
