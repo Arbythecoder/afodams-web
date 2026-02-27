@@ -12,6 +12,7 @@ import LoginPage from './pages/LoginPage'
 import ForgotPasswordPage from './pages/ForgotPasswordPage'
 import PrivacyPage from './pages/PrivacyPage'
 import TermsPage from './pages/TermsPage'
+import ProfilePage from './pages/ProfilePage'
 
 // Consultancy Pages
 import ServicesPage from './pages/ServicesPage'
@@ -73,6 +74,16 @@ function App() {
               <Route path="/signup/tenant" element={<GuestRoute><TenantSignup /></GuestRoute>} />
               <Route path="/signup/investor" element={<GuestRoute><InvestorSignup /></GuestRoute>} />
               <Route path="/signup/agent" element={<GuestRoute><AgentSignup /></GuestRoute>} />
+
+              {/* Profile (Protected) */}
+              <Route
+                path="/profile"
+                element={
+                  <ProtectedRoute>
+                    <ProfilePage />
+                  </ProtectedRoute>
+                }
+              />
 
               {/* Secure Document Upload (Protected) */}
               <Route
