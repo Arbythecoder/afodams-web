@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { FileCheck, Scale, Shield, Building2, ChevronDown, ChevronUp } from 'lucide-react'
+import { FileCheck, Shield, Building2, ChevronDown, ChevronUp } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import Button from '../components/ui/Button'
@@ -23,20 +23,6 @@ const ServicesPage = () => {
       image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1600&auto=format&fit=crop&q=80'
     },
     {
-      icon: Scale,
-      title: 'Government Bids & Tenders',
-      tagline: 'RFP & Procurement Support',
-      description: 'Comprehensive support for government bid submissions, tender responses, and procurement documentation.',
-      features: [
-        'RFP response preparation and review',
-        'Tender documentation compilation',
-        'Compliance verification and checklists',
-        'Bid submission coordination',
-        'Post-submission follow-up support',
-      ],
-      image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1600&auto=format&fit=crop&q=80'
-    },
-    {
       icon: Shield,
       title: 'Documentation Services',
       tagline: 'Secure Document Management',
@@ -53,7 +39,7 @@ const ServicesPage = () => {
     {
       icon: Building2,
       title: 'Institutional Partnerships',
-      tagline: 'Corporate & Government Engagement',
+      tagline: 'Corporate & Institutional Engagement',
       description: 'Strategic support for institutional procurement, partnership structuring, and organizational engagement.',
       features: [
         'Institutional procurement documentation',
@@ -76,12 +62,8 @@ const ServicesPage = () => {
       answer: 'Turnaround times vary by project complexity. Initial consultations are scheduled within 48 hours. Standard documentation projects typically complete within 5-10 business days. Urgent requests can be accommodated with priority service.'
     },
     {
-      question: 'Do you work with government agencies directly?',
-      answer: 'We provide documentation and advisory support for government bid submissions and institutional partnerships. We assist clients in preparing comprehensive, compliant documentation packages but do not act as agents or intermediaries.'
-    },
-    {
       question: 'What industries do you serve?',
-      answer: 'We work with government agencies, educational institutions, healthcare organizations, private corporations, and individual professionals requiring expert documentation and advisory services.'
+      answer: 'We work with educational institutions, healthcare organizations, private corporations, and individual professionals requiring expert documentation and advisory services.'
     },
   ]
 
@@ -101,7 +83,7 @@ const ServicesPage = () => {
               Professional <span className="text-gradient-gold">Consultancy Services</span>
             </h1>
             <p className="text-xl text-gray-300 mb-8">
-              Expert advisory, government bid support, and comprehensive documentation services with absolute confidentiality.
+              Expert advisory and comprehensive documentation services with absolute confidentiality.
             </p>
             <Link to="/book-consultation">
               <Button size="lg" variant="gradient">

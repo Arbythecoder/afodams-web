@@ -51,7 +51,7 @@ const AboutPage = () => {
       name: 'Mrs. Ngozi Okonkwo',
       role: 'Head of Advisory Services',
       image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400',
-      bio: 'Expert in government procurement and bid documentation with extensive public sector experience.'
+      bio: 'Expert in institutional advisory and documentation with extensive professional experience.'
     },
     {
       name: 'Mr. Emeka Johnson',
@@ -69,9 +69,9 @@ const AboutPage = () => {
 
   const milestones = [
     { year: '2014', event: 'AFODAMS Property Limited founded in Lagos' },
-    { year: '2018', event: 'Expanded consultancy services to government sector' },
+    { year: '2018', event: 'Expanded consultancy services to institutional sector' },
     { year: '2020', event: 'Launched institutional partnership support division' },
-    { year: '2022', event: 'Achieved 50+ successful government bid documentations' },
+    { year: '2022', event: 'Achieved 50+ successful institutional documentation projects' },
     { year: '2024', event: 'Introduced secure digital document submission platform' },
     { year: '2026', event: 'Pivot to full-service consultancy platform' },
   ]
@@ -100,8 +100,8 @@ const AboutPage = () => {
               <span className="text-gradient-gold">Consultancy Services</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              AFODAMS Property Limited provides expert consultancy for government bids, 
-              institutional partnerships, and comprehensive documentation with absolute confidentiality.
+              AFODAMS Property Limited provides expert consultancy for institutional partnerships
+              and comprehensive documentation with absolute confidentiality.
             </p>
           </motion.div>
         </div>
@@ -160,9 +160,9 @@ const AboutPage = () => {
                   that delivers results across government, institutional, and private sectors.
                 </p>
                 <p>
-                  Our commitment to professional excellence and client confidentiality has earned 
-                  us the trust of government agencies, educational institutions, healthcare 
-                  organizations, and corporate clients across Nigeria.
+                  Our commitment to professional excellence and client confidentiality has earned
+                  us the trust of educational institutions, healthcare organizations,
+                  and corporate clients across Nigeria.
                 </p>
                 <p>
                   Today, we continue to innovate with our secure digital platform for document 
@@ -206,9 +206,9 @@ const AboutPage = () => {
               </div>
               <h3 className="text-3xl font-playfair font-bold mb-4">Our Mission</h3>
               <p className="text-gray-300 text-lg leading-relaxed">
-                To provide professional consultancy services that empower organizations to successfully 
-                navigate government procurement, institutional partnerships, and complex documentation 
-                requirements with absolute confidentiality and expert guidance.
+                To provide professional consultancy services that empower organizations to successfully
+                navigate institutional partnerships and complex documentation requirements
+                with absolute confidentiality and expert guidance.
               </p>
             </motion.div>
             <motion.div
@@ -223,8 +223,8 @@ const AboutPage = () => {
               </div>
               <h3 className="text-3xl font-playfair font-bold mb-4">Our Vision</h3>
               <p className="text-gray-300 text-lg leading-relaxed">
-                To be Nigeria's premier consultancy platform for government procurement, institutional 
-                partnerships, and documentation services—known for unwavering confidentiality, 
+                To be Nigeria's premier consultancy platform for institutional partnerships
+                and documentation services—known for unwavering confidentiality,
                 professional excellence, and successful outcomes that help our clients achieve their objectives.
               </p>
             </motion.div>

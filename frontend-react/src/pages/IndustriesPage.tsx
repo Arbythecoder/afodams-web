@@ -1,24 +1,10 @@
 import { motion } from 'framer-motion'
-import { Building2, GraduationCap, Users } from 'lucide-react'
+import { GraduationCap, Users } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import Button from '../components/ui/Button'
 
 const IndustriesPage = () => {
   const industries = [
-    {
-      icon: Building2,
-      title: 'Government Agencies',
-      description: 'Supporting public sector procurement, compliance, and institutional documentation needs.',
-      services: [
-        'Government tender and bid documentation',
-        'Procurement compliance support',
-        'Regulatory filing assistance',
-        'Public sector partnership strategies',
-        'Contract review and advisory',
-      ],
-      caseStudy: 'Successfully supported documentation for multiple federal agency procurement processes',
-      image: 'https://images.unsplash.com/photo-1580983218765-e6519dfd3d21?w=1600&auto=format&fit=crop&q=80'
-    },
     {
       icon: GraduationCap,
       title: 'Institutions & Organizations',
@@ -159,7 +145,7 @@ const IndustriesPage = () => {
             </h2>
             <p className="text-gray-700 text-lg leading-relaxed mb-8">
               Our experience spans multiple industries, allowing us to bring best practices and insights 
-              from diverse sectors to your project. Whether you're a government agency, educational institution, 
+              from diverse sectors to your project. Whether you're an educational institution, 
               or private corporation, we understand the unique compliance requirements, documentation standards, 
               and confidentiality expectations of your industry.
             </p>

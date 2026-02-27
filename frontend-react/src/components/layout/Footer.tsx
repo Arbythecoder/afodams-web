@@ -32,7 +32,6 @@ const Footer = () => {
 
   const servicesLinks = [
     { name: 'Consultation & Advisory', path: '/services#consultation' },
-    { name: 'Government Bids & Tenders', path: '/services#bids' },
     { name: 'Documentation Services', path: '/services#documentation' },
     { name: 'Institutional Partnerships', path: '/services#partnerships' },
     { name: 'Book Consultation', path: '/book-consultation' },
@@ -40,7 +39,6 @@ const Footer = () => {
   ]
 
   const industryLinks = [
-    { name: 'Government Agencies', path: '/industries#government' },
     { name: 'Educational Institutions', path: '/industries#institutions' },
     { name: 'Healthcare Organizations', path: '/industries#institutions' },
     { name: 'Private Corporations', path: '/industries#private' },
@@ -113,9 +111,9 @@ const Footer = () => {
               Afodams Property
             </h3>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Professional consultancy services for government contracts, institutional partnerships, 
-              and comprehensive documentation with absolute confidentiality. Supporting agencies, 
-              institutions, and private clients across Nigeria.
+              Professional consultancy services for institutional partnerships
+              and comprehensive documentation with absolute confidentiality.
+              Supporting institutions and private clients across Nigeria.
             </p>
 
             {/* Contact Info */}

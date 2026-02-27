@@ -8,14 +8,8 @@ const HomePage = () => {
     {
       icon: FileCheck,
       title: 'Consultation & Advisory',
-      description: 'Expert guidance on government contracts, institutional partnerships, and strategic documentation.',
+      description: 'Expert guidance on institutional partnerships, strategic documentation, and regulatory compliance.',
       link: '/services#consultation'
-    },
-    {
-      icon: Scale,
-      title: 'Government Bids & Tenders',
-      description: 'Comprehensive support for RFP responses, bid preparation, and compliance verification.',
-      link: '/services#bids'
     },
     {
       icon: Shield,
@@ -33,14 +27,14 @@ const HomePage = () => {
 
   const industries = [
     {
-      title: 'Government Agencies',
-      description: 'Supporting public sector procurement and compliance requirements',
-      icon: '🏛️'
-    },
-    {
       title: 'Institutions',
       description: 'Universities, hospitals, and large organizations',
       icon: '🏢'
+    },
+    {
+      title: 'Private Corporations',
+      description: 'Corporate documentation, advisory, and compliance needs',
+      icon: '🏗️'
     },
     {
       title: 'Private Clients',
@@ -74,9 +68,9 @@ const HomePage = () => {
 
   const caseStudies = [
     {
-      title: 'Federal Government Contract Support',
-      category: 'Government Bid',
-      outcome: 'Successfully supported bid submission process',
+      title: 'Corporate Documentation Support',
+      category: 'Documentation Services',
+      outcome: 'Successfully delivered complete documentation package',
       image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800'
     },
     {
@@ -131,13 +125,13 @@ const HomePage = () => {
               AFODAMS Property Limited
             </h1>
             <p className="text-3xl md:text-4xl font-light mb-8 text-gray-300">
-              Advisory, Government Bids Support,<br />
+              Advisory,<br />
               <span className="text-luxury-gold">and Secure Documentation</span>
             </p>
 
             {/* Subheadline */}
             <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto">
-              Expert consultancy services for government contracts, institutional partnerships,
+              Expert consultancy services for institutional partnerships
               and comprehensive documentation with absolute confidentiality.
             </p>
 
@@ -261,7 +255,7 @@ const HomePage = () => {
               Industries We Serve
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Trusted by government agencies, institutions, and private clients
+              Trusted by institutions and private clients
               across Nigeria for sensitive and high-stakes engagements.
             </p>
           </motion.div>
@@ -385,8 +379,8 @@ const HomePage = () => {
                     Compliance-Aware
                   </h3>
                   <p className="text-gray-600">
-                    Deep understanding of Nigerian regulatory frameworks, government procurement
-                    processes, and institutional requirements.
+                    Deep understanding of Nigerian regulatory frameworks
+                    and institutional requirements.
                   </p>
                 </div>
               </motion.div>
@@ -406,8 +400,8 @@ const HomePage = () => {
                     Experienced Professionals
                   </h3>
                   <p className="text-gray-600">
-                    Our team brings decades of combined experience in government relations,
-                    legal documentation, and institutional partnerships.
+                    Our team brings decades of combined experience in
+                    legal documentation and institutional partnerships.
                   </p>
                 </div>
               </motion.div>
@@ -427,7 +421,7 @@ const HomePage = () => {
                     Proven Track Record
                   </h3>
                   <p className="text-gray-600">
-                    Successfully supported numerous government bids, institutional partnerships,
+                    Successfully supported numerous institutional partnerships
                     and complex documentation projects across Nigeria.
                   </p>
                 </div>

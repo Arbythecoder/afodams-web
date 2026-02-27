@@ -39,8 +39,8 @@ const PrivacyPage = () => {
                 Confidentiality is Our Foundation
               </h2>
               <p className="text-gray-700 leading-relaxed text-lg">
-                At AFODAMS Property Limited, we understand that the work we do—supporting government bids, 
-                institutional partnerships, and sensitive documentation—requires the highest levels of confidentiality 
+                At AFODAMS Property Limited, we understand that the work we do—supporting institutional
+                partnerships and sensitive documentation—requires the highest levels of confidentiality
                 and discretion. This privacy policy outlines how we collect, use, protect, and respect your information.
               </p>
             </div>

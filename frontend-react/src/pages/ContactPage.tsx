@@ -107,11 +107,7 @@ const ContactPage = () => {
     },
     {
       question: 'How long does the consultancy process take?',
-      answer: 'Project timelines vary by complexity. Typical government bid support takes 2-3 weeks, while comprehensive documentation projects may take 3-6 weeks. We provide clear timelines during the initial consultation.'
-    },
-    {
-      question: 'Do you work with government agencies directly?',
-      answer: 'We provide consultancy and documentation support for organizations engaging with government agencies. We assist in preparing compliant bid packages and institutional partnership proposals.'
+      answer: 'Project timelines vary by complexity. Standard documentation projects typically take 2-4 weeks, while comprehensive institutional documentation projects may take 3-6 weeks. We provide clear timelines during the initial consultation.'
     },
   ]
 

@@ -7,14 +7,14 @@ const CaseStudiesPage = () => {
   const caseStudies = [
     {
       icon: Building2,
-      category: 'Government Procurement',
-      title: 'Federal Agency Bid Support',
+      category: 'Institutional Procurement',
+      title: 'Corporate Procurement Documentation',
       client: 'Confidential',
-      challenge: 'A corporate client required comprehensive documentation and compliance support for a federal government procurement bid with strict requirements and tight deadlines.',
-      solution: 'We provided end-to-end documentation preparation, compliance verification, and strategic advisory services throughout the bid submission process.',
-      outcome: 'Successfully submitted complete, compliant documentation package. Client reported the bid process was significantly smoother than previous attempts.',
+      challenge: 'A corporate client required comprehensive documentation and compliance support for a major institutional procurement process with strict requirements and tight deadlines.',
+      solution: 'We provided end-to-end documentation preparation, compliance verification, and strategic advisory services throughout the submission process.',
+      outcome: 'Successfully submitted complete, compliant documentation package. Client reported the process was significantly smoother than previous attempts.',
       duration: '3 weeks',
-      services: ['Government Bids Support', 'Compliance Verification', 'Documentation Preparation'],
+      services: ['Consultation & Advisory', 'Compliance Verification', 'Documentation Preparation'],
       image: 'https://images.unsplash.com/photo-1580983218765-e6519dfd3d21?w=1600&auto=format&fit=crop&q=80'
     },
     {
@@ -191,8 +191,8 @@ const CaseStudiesPage = () => {
               Proven Track Record
             </h2>
             <p className="text-gray-700 text-lg leading-relaxed mb-12">
-              Across government agencies, educational institutions, and private clients, we've consistently 
-              delivered comprehensive documentation and advisory services that meet the highest standards of 
+              Across educational institutions, private corporations, and individual clients, we've consistently
+              delivered comprehensive documentation and advisory services that meet the highest standards of
               professionalism, accuracy, and confidentiality.
             </p>
 

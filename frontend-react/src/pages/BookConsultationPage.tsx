@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useState, FormEvent } from 'react'
-import { Calendar, Phone, Mail, Building, FileText, CheckCircle, Shield } from 'lucide-react'
+import { Calendar, Phone, Mail, FileText, CheckCircle, Shield } from 'lucide-react'
 import Button from '../components/ui/Button'
 import toast from 'react-hot-toast'
 
@@ -19,7 +19,6 @@ const BookConsultationPage = () => {
   })
 
   const organizationTypes = [
-    'Government Agency',
     'Educational Institution',
     'Healthcare Organization',
     'Private Corporation',
@@ -29,7 +28,6 @@ const BookConsultationPage = () => {
 
   const services = [
     'Consultation & Advisory',
-    'Government Bids & Tenders',
     'Documentation Services',
     'Institutional Partnerships',
     'General Inquiry'
