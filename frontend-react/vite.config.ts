@@ -5,9 +5,7 @@ import path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // Use '/' for custom domain or Cloudflare Pages (client's domain)
-  // Use '/afodams-web/' only for GitHub Pages subdirectory
-  base: '/afodams-web/',
+  base: '/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

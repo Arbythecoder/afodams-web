@@ -1,0 +1,48 @@
+# Node modules (built fresh in Docker)
+node_modules/
+backend/node_modules/
+frontend-react/node_modules/
+frontend/node_modules/
+
+# Frontend build output (built inside Docker)
+frontend-react/dist/
+frontend-react/.vite/
+
+# Environment files
+.env
+*.env
+backend/.env
+frontend-react/.env.local
+
+# Dev & test files
+**/*.test.js
+**/coverage/
+**/.nyc_output/
+
+# Git
+.git/
+.gitignore
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+nul
+
+# Docs
+*.md
+*.txt
+*.bat
+
+# Old frontend HTML version
+frontend-react/frontend/
+
+# Duplicate backend copy
+frontend-react/backend/
+
+# IDE
+.vscode/
+.idea/
