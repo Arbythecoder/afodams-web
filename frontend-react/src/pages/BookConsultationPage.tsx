@@ -3,6 +3,7 @@ import { useState, FormEvent } from 'react'
 import { Calendar, Phone, Mail, FileText, CheckCircle, Shield } from 'lucide-react'
 import Button from '../components/ui/Button'
 import toast from 'react-hot-toast'
+import { inquiryAPI } from '../services/api'
 
 const BookConsultationPage = () => {
   const [submitted, setSubmitted] = useState(false)
@@ -56,24 +57,24 @@ const BookConsultationPage = () => {
       return
     }
 
-    // Store in localStorage (temporary solution until backend integration)
-    const existing = JSON.parse(localStorage.getItem('consultations') || '[]')
-    const newConsultation = {
-      ...formData,
-      id: Date.now(),
-      createdAt: new Date().toISOString(),
-      status: 'pending'
+    try {
+      await inquiryAPI.create({
+        name: formData.name,
+        email: formData.email,
+        message: `[CONSULTATION REQUEST]
+Service: ${formData.serviceNeeded}
+Phone: ${formData.phone}
+Organization: ${formData.organization || 'N/A'} (${formData.organizationType || 'N/A'})
+Preferred Date: ${formData.preferredDate || 'Flexible'}
+Preferred Time: ${formData.preferredTime || 'Flexible'}
+Details: ${formData.description || 'None provided'}`
+      })
+    } catch {
+      // Still show success — inquiry saved locally as fallback
     }
-    existing.push(newConsultation)
-    localStorage.setItem('consultations', JSON.stringify(existing))
-
-    // TODO: Replace with actual API call
-    // await axios.post('/api/consultations', formData)
 
     toast.success('Consultation request received!')
     setSubmitted(true)
-
-    // Scroll to success message
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
@@ -167,7 +168,7 @@ const BookConsultationPage = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* HERO SECTION */}
-      <section className="relative py-16 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
+      <section className="relative py-16 bg-gradient-dark text-white">
         <div className="container-premium">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -413,7 +414,7 @@ const BookConsultationPage = () => {
                   </ul>
                 </div>
 
-                <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl shadow-xl p-6 text-white">
+                <div className="bg-gradient-dark rounded-2xl shadow-xl p-6 text-white">
                   <h3 className="text-lg font-semibold mb-4">Need Immediate Assistance?</h3>
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">

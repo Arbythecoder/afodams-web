@@ -5,7 +5,7 @@ const PrivacyPage = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* HERO SECTION */}
-      <section className="relative py-16 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
+      <section className="relative py-16 bg-gradient-dark text-white">
         <div className="container-premium">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -317,7 +317,7 @@ const PrivacyPage = () => {
                 Contact Us
               </h2>
 
-              <div className="bg-gradient-to-br from-gray-900 to-gray-800 text-white p-8 rounded-2xl">
+              <div className="bg-gradient-dark text-white p-8 rounded-2xl">
                 <p className="mb-6">
                   If you have any questions, concerns, or requests regarding this privacy policy or how we handle your information:
                 </p>

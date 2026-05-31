@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
-  Plus, Home, DollarSign, Users, TrendingUp, Eye, Edit, Trash2,
-  X, Upload, MapPin, BedDouble, Bath, Maximize, Image as ImageIcon
+  Plus, Home, DollarSign, TrendingUp, Eye, Edit, Trash2,
+  X, MapPin, BedDouble, Bath, Maximize, Image as ImageIcon, Upload, XCircle
 } from 'lucide-react'
 import toast from 'react-hot-toast'
 import Button from '../../components/ui/Button'
@@ -18,6 +18,9 @@ const LandlordDashboard = () => {
     views: 0,
     revenue: '0'
   })
+  const [selectedImages, setSelectedImages] = useState<File[]>([])
+  const [imagePreviews, setImagePreviews] = useState<string[]>([])
+  const fileInputRef = useRef<HTMLInputElement>(null)
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -83,6 +86,22 @@ const LandlordDashboard = () => {
     }))
   }
 
+  const handleImageSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(e.target.files || [])
+    if (files.length === 0) return
+    const combined = [...selectedImages, ...files].slice(0, 10) // cap at 10
+    setSelectedImages(combined)
+    const previews = combined.map(f => URL.createObjectURL(f))
+    setImagePreviews(previews)
+  }
+
+  const handleRemoveImage = (index: number) => {
+    const newFiles = selectedImages.filter((_, i) => i !== index)
+    const newPreviews = imagePreviews.filter((_, i) => i !== index)
+    setSelectedImages(newFiles)
+    setImagePreviews(newPreviews)
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
@@ -107,11 +126,18 @@ const LandlordDashboard = () => {
         propertyData.append(`amenities[${index}]`, feature)
       })
 
+      // Append real image files
+      selectedImages.forEach((file) => {
+        propertyData.append('images', file)
+      })
+
       await propertyAPI.create(propertyData)
       toast.success('Property submitted for approval!')
 
       // Reset form and close modal
       setShowAddProperty(false)
+      setSelectedImages([])
+      setImagePreviews([])
       setFormData({
         title: '',
         description: '',
@@ -541,12 +567,52 @@ const LandlordDashboard = () => {
 
                 {/* Images */}
                 <div>
-                  <h3 className="text-xl font-semibold text-premium-black mb-4">Images</h3>
-                  <div className="border-2 border-dashed border-gray-300 rounded-xl p-12 text-center hover:border-luxury-gold transition-colors cursor-pointer">
-                    <ImageIcon className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-                    <p className="text-gray-600 mb-2">Click to upload or drag and drop</p>
-                    <p className="text-sm text-gray-500">PNG, JPG up to 10MB</p>
+                  <h3 className="text-xl font-semibold text-premium-black mb-4">
+                    Images <span className="text-sm font-normal text-gray-500">({selectedImages.length}/10)</span>
+                  </h3>
+
+                  {/* Hidden real file input */}
+                  <input
+                    ref={fileInputRef}
+                    type="file"
+                    accept="image/png,image/jpeg,image/webp"
+                    multiple
+                    className="hidden"
+                    onChange={handleImageSelect}
+                  />
+
+                  {/* Click-to-upload area */}
+                  <div
+                    onClick={() => fileInputRef.current?.click()}
+                    className="border-2 border-dashed border-gray-300 rounded-xl p-10 text-center hover:border-luxury-gold transition-colors cursor-pointer mb-4"
+                  >
+                    <Upload className="w-12 h-12 text-gray-400 mx-auto mb-3" />
+                    <p className="text-gray-600 mb-1 font-medium">Click to upload property images</p>
+                    <p className="text-sm text-gray-500">PNG, JPG, WEBP — up to 10 files, 10MB each</p>
                   </div>
+
+                  {/* Image previews */}
+                  {imagePreviews.length > 0 && (
+                    <div className="grid grid-cols-3 md:grid-cols-5 gap-3">
+                      {imagePreviews.map((src, i) => (
+                        <div key={i} className="relative group aspect-square rounded-xl overflow-hidden border border-gray-200">
+                          <img src={src} alt={`preview-${i}`} className="w-full h-full object-cover" />
+                          <button
+                            type="button"
+                            onClick={() => handleRemoveImage(i)}
+                            className="absolute top-1 right-1 bg-red-500 text-white rounded-full p-0.5 opacity-0 group-hover:opacity-100 transition-opacity"
+                          >
+                            <XCircle className="w-4 h-4" />
+                          </button>
+                          {i === 0 && (
+                            <span className="absolute bottom-1 left-1 text-xs bg-luxury-gold text-premium-black px-1.5 py-0.5 rounded font-semibold">
+                              Cover
+                            </span>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 {/* Submit */}

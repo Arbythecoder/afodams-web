@@ -70,7 +70,7 @@ const ServicesPage = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* HERO SECTION */}
-      <section className="relative py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
+      <section className="relative py-24 bg-gradient-dark text-white">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1920')] bg-cover bg-center opacity-10"></div>
         <div className="container-premium relative z-10">
           <motion.div
@@ -219,7 +219,7 @@ const ServicesPage = () => {
       </section>
 
       {/* CTA SECTION */}
-      <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
+      <section className="py-20 bg-gradient-dark text-white">
         <div className="container-premium text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

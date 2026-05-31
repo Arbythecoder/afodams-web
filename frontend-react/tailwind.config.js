@@ -32,13 +32,16 @@ export default {
         montserrat: ['Montserrat', 'sans-serif'],
       },
       backgroundImage: {
-        'gradient-gold': 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)',
-        'gradient-dark': 'linear-gradient(135deg, #1a1a1a 0%, #000000 100%)',
+        'gradient-gold': 'linear-gradient(135deg, #D4AF37 0%, #FF8C42 100%)',
+        'gradient-dark': 'linear-gradient(135deg, #2C1614 0%, #4A2C2A 100%)',
         'gradient-luxury': 'linear-gradient(135deg, #D4AF37 0%, #FF8C42 50%, #4A2C2A 100%)',
+        'gradient-brand': 'linear-gradient(135deg, #4A2C2A 0%, #2C1614 100%)',
       },
       boxShadow: {
         'gold': '0 8px 32px rgba(212, 175, 55, 0.3)',
         'gold-lg': '0 12px 40px rgba(212, 175, 55, 0.4)',
+        'orange': '0 8px 32px rgba(255, 140, 66, 0.35)',
+        'orange-lg': '0 12px 40px rgba(255, 140, 66, 0.45)',
       },
       animation: {
         'fade-in-up': 'fadeInUp 0.6s ease forwards',

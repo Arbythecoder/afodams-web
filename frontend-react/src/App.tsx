@@ -13,6 +13,11 @@ import ForgotPasswordPage from './pages/ForgotPasswordPage'
 import PrivacyPage from './pages/PrivacyPage'
 import TermsPage from './pages/TermsPage'
 import ProfilePage from './pages/ProfilePage'
+import PropertyListPage from './pages/PropertyListPage'
+import PropertyDetailsPage from './pages/PropertyDetailsPage'
+import DealSealingPage from './pages/DealSealingPage'
+import ProspectivePage from './pages/ProspectivePage'
+import PaymentConfirmationPage from './pages/PaymentConfirmationPage'
 
 // Consultancy Pages
 import ServicesPage from './pages/ServicesPage'
@@ -45,6 +50,15 @@ import Footer from './components/layout/Footer'
 import ProtectedRoute from './components/auth/ProtectedRoute'
 import GuestRoute from './components/auth/GuestRoute'
 
+// UI Utilities
+import BackToTop from './components/ui/BackToTop'
+import ScrollToTop from './components/ui/ScrollToTop'
+import AppComingSoon from './components/ui/AppComingSoon'
+
+// Lead Capture
+import IkejaLanding from './pages/IkejaLanding'
+import { WhatsAppButton } from './components/leads/WhatsAppButton'
+
 function App() {
   return (
     <Router>
@@ -52,6 +66,7 @@ function App() {
         <div className="min-h-screen flex flex-col">
           <Navbar />
 
+          <ScrollToTop />
           <main className="flex-grow">
             <Routes>
               {/* Public Routes */}
@@ -65,6 +80,15 @@ function App() {
               <Route path="/book-consultation" element={<BookConsultationPage />} />
               <Route path="/privacy" element={<PrivacyPage />} />
               <Route path="/terms" element={<TermsPage />} />
+
+              {/* Lead Capture Landing Pages */}
+              <Route path="/ikeja" element={<IkejaLanding />} />
+
+              {/* Property Public Routes */}
+              <Route path="/properties" element={<PropertyListPage />} />
+              <Route path="/properties/:id" element={<PropertyDetailsPage />} />
+              <Route path="/prospective" element={<ProspectivePage />} />
+              <Route path="/payment/confirmation" element={<PaymentConfirmationPage />} />
 
               {/* Guest-only Routes (redirect to dashboard if already logged in) */}
               <Route path="/login" element={<GuestRoute><LoginPage /></GuestRoute>} />
@@ -91,6 +115,24 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <SecureDocsPage />
+                  </ProtectedRoute>
+                }
+              />
+
+              {/* Deal Sealing (Protected) */}
+              <Route
+                path="/deals/seal"
+                element={
+                  <ProtectedRoute>
+                    <DealSealingPage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/deals/seal/:propertyId"
+                element={
+                  <ProtectedRoute>
+                    <DealSealingPage />
                   </ProtectedRoute>
                 }
               />
@@ -153,6 +195,8 @@ function App() {
           </main>
 
           <Footer />
+          <BackToTop />
+          <WhatsAppButton />
 
           {/* Toast Notifications */}
           <Toaster
@@ -160,8 +204,8 @@ function App() {
             toastOptions={{
               duration: 3000,
               style: {
-                background: 'linear-gradient(135deg, #D4AF37 0%, #FFA500 100%)',
-                color: '#0A0A0A',
+                background: 'linear-gradient(135deg, #FF8C42 0%, #D4AF37 100%)',
+                color: '#2C1614',
                 fontWeight: '600',
                 fontFamily: 'Poppins, sans-serif',
               },

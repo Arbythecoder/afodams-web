@@ -25,6 +25,7 @@ const tenantRoutes = require("./routes/tenantRoutes");
 const landlordRoutes = require("./routes/landlordRoutes");
 const notificationRoutes = require("./routes/notificationRoutes");
 const favoriteRoutes = require("./routes/favoriteRoutes");
+const leadRoutes = require("./routes/leadRoutes");
 
 const app = express();
 const server = http.createServer(app);
@@ -56,6 +57,9 @@ const allowedOrigins = [
     "http://localhost:5173",
     "http://localhost:3000",
     "https://arbythecoder.github.io",
+    "https://afodams-prop.fly.dev",
+    "https://afodamsproperty.com",
+    "https://www.afodamsproperty.com",
     process.env.CORS_ORIGIN
 ].filter(Boolean);
 
@@ -117,6 +121,7 @@ app.use("/api/agents", agentRoutes);
 app.use("/api/landlords", landlordRoutes);
 app.use("/api/notifications", notificationRoutes);
 app.use("/api/favorites", favoriteRoutes);
+app.use("/api/leads", leadRoutes);
 
 // Health check endpoint
 app.get("/health", (req, res) => {
@@ -144,7 +149,7 @@ app.get("*", (req, res) => {
 
 // Start the server
 const PORT = process.env.PORT || 5000;
-server.listen(PORT, () => {
+server.listen(PORT, "0.0.0.0", () => {
     console.log(`🚀 Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
     console.log(`📚 API Docs available at http://localhost:${PORT}/api-docs`);
 });

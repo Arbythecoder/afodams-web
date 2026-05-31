@@ -30,8 +30,11 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error.response?.status === 401) {
-      // Token expired or invalid
+    // Only force-logout on 401 from auth endpoints (token truly invalid/expired)
+    // Never kick users out because a data-fetching endpoint returned 401
+    const url = error.config?.url ?? ''
+    const isAuthEndpoint = url.includes('/auth/login') || url.includes('/auth/profile') || url.includes('/auth/me')
+    if (error.response?.status === 401 && isAuthEndpoint) {
       localStorage.removeItem('token')
       localStorage.removeItem('user')
       window.location.hash = '#/login'

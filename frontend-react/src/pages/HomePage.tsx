@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, Shield, FileCheck, Scale, Lock, Building2, Users, TrendingUp, CheckCircle } from 'lucide-react'
+import { ArrowRight, Shield, FileCheck, Scale, Lock, Building2, Users, TrendingUp, CheckCircle, MapPin, BedDouble, Bath } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import Button from '../components/ui/Button'
 
@@ -87,10 +87,40 @@ const HomePage = () => {
     }
   ]
 
+  const featuredProperties = [
+    {
+      title: '5-Bedroom Detached Duplex',
+      location: 'Lekki Phase 1, Lagos',
+      price: '₦150,000,000',
+      beds: 5,
+      baths: 4,
+      image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=600',
+      type: 'For Sale',
+    },
+    {
+      title: '3-Bedroom Luxury Apartment',
+      location: 'Maitama, Abuja',
+      price: '₦45,000,000',
+      beds: 3,
+      baths: 3,
+      image: 'https://images.unsplash.com/photo-1567496898669-ee935f5f647a?w=600',
+      type: 'For Sale',
+    },
+    {
+      title: '4-Bedroom Terrace House',
+      location: 'GRA, Port Harcourt',
+      price: '₦3,500,000/yr',
+      beds: 4,
+      baths: 3,
+      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600',
+      type: 'For Rent',
+    },
+  ]
+
   return (
     <div className="min-h-screen">
       {/* HERO SECTION */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-dark">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 opacity-20">
           <img
@@ -211,11 +241,10 @@ const HomePage = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <motion.a
+              <motion.div
                 key={service.title}
-                href={service.link}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -236,14 +265,14 @@ const HomePage = () => {
                   Learn More
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:ml-3 transition-all" />
                 </div>
-              </motion.a>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* INDUSTRIES SECTION */}
-      <section className="py-24 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+      <section className="py-24 bg-gradient-dark text-white">
         <div className="container-premium">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -498,8 +527,85 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* FEATURED PROPERTIES SECTION */}
+      <section className="py-24 bg-white">
+        <div className="container-premium">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="badge-premium mb-6 inline-block">Properties</span>
+            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-premium-black mb-6">
+              Featured Listings
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Browse verified properties across Nigeria. Our consultants are here to guide
+              you through every step of the process.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {featuredProperties.map((property, index) => (
+              <motion.div
+                key={property.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="group bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-xl transition-all"
+              >
+                <div className="relative h-56 overflow-hidden">
+                  <img
+                    src={property.image}
+                    alt={property.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <span className="absolute top-4 left-4 px-3 py-1 bg-luxury-gold text-premium-black text-xs font-bold rounded-full">
+                    {property.type}
+                  </span>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-playfair font-bold text-premium-black mb-2">
+                    {property.title}
+                  </h3>
+                  <p className="text-gray-500 flex items-center gap-1 mb-4 text-sm">
+                    <MapPin className="w-4 h-4" /> {property.location}
+                  </p>
+                  <div className="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                    <span className="flex items-center gap-1"><BedDouble className="w-4 h-4" /> {property.beds} beds</span>
+                    <span className="flex items-center gap-1"><Bath className="w-4 h-4" /> {property.baths} baths</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-xl font-bold text-luxury-gold">{property.price}</span>
+                    <Link to="/properties">
+                      <Button variant="outline" size="sm">View</Button>
+                    </Link>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            <Link to="/properties">
+              <Button variant="outline" size="lg">
+                View All Properties
+                <ArrowRight className="w-5 h-5" />
+              </Button>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
       {/* FINAL CTA SECTION */}
-      <section className="py-24 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+      <section className="py-24 bg-gradient-dark text-white">
         <div className="container-premium">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

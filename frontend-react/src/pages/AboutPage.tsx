@@ -11,7 +11,7 @@ const AboutPage = () => {
   const navigate = useNavigate()
 
   const stats = [
-    { value: '15+', label: 'Years Experience', icon: <Clock className="w-6 h-6" /> },
+    { value: '15+', label: 'Years of Experience', icon: <Clock className="w-6 h-6" /> },
     { value: '50+', label: 'Successful Engagements', icon: <Home className="w-6 h-6" /> },
     { value: '100%', label: 'Confidentiality Maintained', icon: <Heart className="w-6 h-6" /> },
     { value: '3', label: 'Key Industries', icon: <Users className="w-6 h-6" /> },
@@ -44,36 +44,36 @@ const AboutPage = () => {
     {
       name: 'Chief Adewale Afodams',
       role: 'Founder & CEO',
-      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400',
-      bio: 'Over 15 years of experience in consultancy and institutional partnerships across Nigeria.'
+      image: 'https://images.unsplash.com/photo-1504257432389-52343af06ae3?w=400',
+      bio: 'Over 15 years of experience in property consultancy and institutional partnerships across Nigeria.'
     },
     {
       name: 'Mrs. Ngozi Okonkwo',
       role: 'Head of Advisory Services',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400',
+      image: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400',
       bio: 'Expert in institutional advisory and documentation with extensive professional experience.'
     },
     {
       name: 'Mr. Emeka Johnson',
       role: 'Legal & Compliance Director',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400',
+      image: 'https://images.unsplash.com/photo-1600878459108-617a253537e9?w=400',
       bio: 'Ensures all documentation meets regulatory requirements and legal standards.'
     },
     {
       name: 'Mrs. Aisha Mohammed',
       role: 'Client Relations Manager',
-      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400',
+      image: 'https://images.unsplash.com/photo-1548544149-4835e62ee5b3?w=400',
       bio: 'Dedicated to maintaining confidentiality and providing exceptional client service.'
     },
   ]
 
   const milestones = [
-    { year: '2014', event: 'AFODAMS Property Limited founded in Lagos' },
-    { year: '2018', event: 'Expanded consultancy services to institutional sector' },
-    { year: '2020', event: 'Launched institutional partnership support division' },
-    { year: '2022', event: 'Achieved 50+ successful institutional documentation projects' },
-    { year: '2024', event: 'Introduced secure digital document submission platform' },
-    { year: '2026', event: 'Pivot to full-service consultancy platform' },
+    { year: '2009', event: 'First office opened in Gbagada, Lagos — began as a rental agency helping families find quality homes' },
+    { year: '2013', event: 'Relocated to Allen Avenue, Ikeja — expanded into full property consultancy and advisory services' },
+    { year: '2016', event: 'Launched joint venture facilitation division for institutional clients' },
+    { year: '2019', event: 'Established institutional partnership support practice' },
+    { year: '2022', event: 'Achieved 50+ successful documentation and partnership projects' },
+    { year: '2025', event: 'Launched secure digital document submission platform' },
   ]
 
   return (
@@ -146,28 +146,33 @@ const AboutPage = () => {
                 Our Story
               </span>
               <h2 className="text-4xl font-playfair font-bold mt-3 mb-6">
-                Trusted Consultancy Since 2014
+                From Gbagada to Nigeria's Premier Consultancy
               </h2>
               <div className="space-y-4 text-gray-600 text-lg leading-relaxed">
                 <p>
-                  AFODAMS Property Limited was founded with a mission: to provide professional, 
-                  confidential consultancy services that help organizations navigate complex 
-                  procurement, documentation, and institutional partnership requirements.
+                  AFODAMS Property Limited began humbly in Gbagada, Lagos, where our founder
+                  opened a small rental agency helping local families find quality homes and
+                  connecting landlords with reliable tenants. That grassroots experience gave
+                  us an unmatched understanding of the Nigerian property market from the ground up.
                 </p>
                 <p>
-                  Starting from our office on Ogudu Road, Lagos, we have built a reputation 
-                  for absolute confidentiality, meticulous documentation, and strategic advisory 
-                  that delivers results across government, institutional, and private sectors.
+                  As our reputation grew, we relocated to Allen Avenue, Ikeja — the commercial
+                  heart of Lagos. Clients began seeking deeper guidance: not just finding
+                  properties, but navigating complex documentation, legal frameworks, and
+                  institutional partnerships. We evolved into full property consultancy and
+                  advisory services.
                 </p>
                 <p>
-                  Our commitment to professional excellence and client confidentiality has earned
-                  us the trust of educational institutions, healthcare organizations,
-                  and corporate clients across Nigeria.
+                  The natural next step was joint ventures — facilitating deals between
+                  investors, institutions, and developers who needed a trusted intermediary
+                  with deep market knowledge and unimpeachable integrity. Today, this is
+                  the heart of what we do.
                 </p>
                 <p>
-                  Today, we continue to innovate with our secure digital platform for document 
-                  submission, offering encrypted communications and streamlined processes that 
-                  protect client confidentiality while delivering comprehensive support.
+                  From a rental agency in Gbagada to a full-service consultancy on Allen Avenue,
+                  trusted by educational institutions, healthcare organizations, and corporate
+                  clients across Nigeria — our commitment to confidentiality and professional
+                  excellence has never wavered.
                 </p>
               </div>
             </motion.div>
@@ -450,7 +455,7 @@ const AboutPage = () => {
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="w-6 h-6 text-premium-black" />
-                <span className="text-premium-black font-semibold">149 Ogudu Road, Lagos</span>
+                <span className="text-premium-black font-semibold">Allen Avenue, Ikeja, Lagos</span>
               </div>
             </div>
           </motion.div>
